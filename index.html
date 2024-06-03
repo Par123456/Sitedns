@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate IPv6 Address</title>
+</head>
+<body>
+    <script>
+        function generateIPv6() {
+            let ipv6 = [];
+            for (let i = 0; i < 8; i++) {
+                let block = Math.floor(Math.random() * 0x10000).toString(16);
+                while (block.length < 4) {
+                    block = '0' + block;
+                }
+                ipv6.push(block);
+            }
+            return ipv6.join(':');
+        }
+
+        console.log("Generated IPv6 address: " + generateIPv6());
+    </script>
+</body>
+</html>
